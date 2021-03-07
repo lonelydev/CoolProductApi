@@ -2,8 +2,8 @@
 
 ## What is it?
 
-A lot has been said about versioning your product. Semantic version is familiar if you develop apps and consume libraries/packages from package repositories like npm or NuGet.
-Sometimes, your product is an API. How do you go about versioning it? I have versioned APIs in the past without doi9ng a full literature review of the different routes that I could have gone for versioning my API. 
+A lot has been said about versioning your product. Semantic versioning or Semver is probably already familiar to you if you develop apps and consume libraries/packages from package repositories like npm or NuGet.
+Sometimes, your product is an API. How do you go about versioning it? I have versioned APIs in the past without doing a full literature review of the different routes that I could have gone for versioning my API. 
 
 But just a hint: Unlike Semantic versioning, one does not Version API with a `x.y.z` format. 
 

@@ -2,7 +2,7 @@ using System;
 
 namespace CoolProductApi
 {
-    public class WeatherForecast
+    public class WeatherForecastV1
     {
         public DateTime Date { get; set; }
 

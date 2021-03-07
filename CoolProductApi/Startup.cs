@@ -26,7 +26,11 @@ namespace CoolProductApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddApiVersioning();
+            services.AddApiVersioning(options =>
+            {
+                options.AssumeDefaultVersionWhenUnspecified = true; 
+                options.DefaultApiVersion = ApiVersion.Default;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,12 +3,13 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CoolProductApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [ApiVersion("1.0")] // tells .net core that this controller support api version 1.0
+    [ApiVersion("2.0")] // tells .net core that this controller also supports api version 2.0
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -24,13 +25,27 @@ namespace CoolProductApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<WeatherForecastV1> GetV1()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecastV1
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .ToArray();
+        }
+
+        [HttpGet]
+        [MapToApiVersion("2.0")]
+        public IEnumerable<WeatherForecastV2> GetV2()
+        {
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecastV2
+            {
+                Date = DateTime.Now.AddDays(index),
+                Celsius= rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
