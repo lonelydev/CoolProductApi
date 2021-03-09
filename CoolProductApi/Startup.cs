@@ -25,7 +25,7 @@ namespace CoolProductApi
             {
                 options.AssumeDefaultVersionWhenUnspecified = true; 
                 options.DefaultApiVersion = ApiVersion.Default;
-                options.ApiVersionReader = new MediaTypeApiVersionReader("version");
+                options.ApiVersionReader = new HeaderApiVersionReader("e-version");
             });
         }
 
