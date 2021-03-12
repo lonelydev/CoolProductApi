@@ -29,6 +29,7 @@ namespace CoolProductApi
                     new HeaderApiVersionReader("e-version"),
                     new MediaTypeApiVersionReader("version")
                     );
+                options.ReportApiVersions = true; // response headers contain version information
             });
         }
 

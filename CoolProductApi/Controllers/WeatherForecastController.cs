@@ -8,7 +8,7 @@ namespace CoolProductApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [ApiVersion("1.0")] // tells .net core that this controller support api version 1.0
+    [ApiVersion("1.0", Deprecated = true)] // tells .net core that this controller support api version 1.0
     [ApiVersion("2.0")] // tells .net core that this controller also supports api version 2.0
     public class WeatherForecastController : ControllerBase
     {
