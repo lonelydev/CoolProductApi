@@ -1,7 +1,9 @@
+using CoolProductApi.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.AspNetCore.Mvc.Versioning.Conventions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,6 +31,13 @@ namespace CoolProductApi
                     new HeaderApiVersionReader("e-version"),
                     new MediaTypeApiVersionReader("version")
                     );
+
+                options.Conventions.Controller<WeatherForecastController>()
+                .HasDeprecatedApiVersion(1, 0)
+                .HasApiVersion(2,0)
+                .Action(typeof(WeatherForecastController).GetMethod(nameof(WeatherForecastController.GetV2)))
+                .MapToApiVersion(2,0);
+
                 options.ReportApiVersions = true; // response headers contain version information
             });
         }

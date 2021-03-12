@@ -7,9 +7,7 @@ using System.Linq;
 namespace CoolProductApi.Controllers
 {
     [ApiController]
-    [Route("v{version:apiVersion}/[controller]")]
-    [ApiVersion("1.0", Deprecated = true)] // tells .net core that this controller support api version 1.0
-    [ApiVersion("2.0")] // tells .net core that this controller also supports api version 2.0
+    [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -38,7 +36,6 @@ namespace CoolProductApi.Controllers
         }
 
         [HttpGet]
-        [MapToApiVersion("2.0")]
         public IEnumerable<WeatherForecastV2> GetV2()
         {
             var rng = new Random();

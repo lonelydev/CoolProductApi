@@ -9,6 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		AspNetCoreApiVersioning.md = AspNetCoreApiVersioning.md
 		README.md = README.md
+		RespondingWithVersionInformation.md = RespondingWithVersionInformation.md
+		VersioningCombination.md = VersioningCombination.md
+		VersioningFluentSyntax.md = VersioningFluentSyntax.md
+		VersioningUriPath.md = VersioningUriPath.md
+		VersioningUsingAcceptHeader.md = VersioningUsingAcceptHeader.md
+		VersioningUsingCustomHeader.md = VersioningUsingCustomHeader.md
 	EndProjectSection
 EndProject
 Global
