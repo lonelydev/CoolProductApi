@@ -7,7 +7,9 @@ using System.Linq;
 namespace CoolProductApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("v{version:apiVersion}/[controller]")]
+    [ApiVersion("1")]
+    [ApiVersion("2")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -23,6 +25,7 @@ namespace CoolProductApi.Controllers
         }
 
         [HttpGet]
+        [MapToApiVersion("1")]
         public IEnumerable<WeatherForecastV1> GetV1()
         {
             var rng = new Random();
@@ -36,6 +39,7 @@ namespace CoolProductApi.Controllers
         }
 
         [HttpGet]
+        [MapToApiVersion("2")]
         public IEnumerable<WeatherForecastV2> GetV2()
         {
             var rng = new Random();

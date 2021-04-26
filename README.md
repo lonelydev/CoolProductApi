@@ -83,3 +83,13 @@ Lets get to that then.
 Did you know Microsoft has a Nuget package just for this? It is called [Microsoft.AspNetCore.Mvc.Versioning](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Versioning/5.0.0?_src=template).
 
 So let us take a deep dive in [AspNetCoreApiVersioning](./AspNetCoreApiVersioning.md)
+
+## What about documenting your API?
+
+That's great. You can version your API. However, in real life, you would most often provide your API users with some documentation. Most projects that I have worked on have done this using an implementation of the OpenApi specification. 
+If you have worked on web services some years ago (10 years ago), you might remember having to create [WSDL](https://www.w3.org/TR/2001/NOTE-wsdl-20010315) files, to view the list of operations available at a service and also learn more about their inputs and outputs etc. 
+
+Open API is the modern version of this. We have come a long way in terms of writing interoperable web services. 
+
+So you might have to add your versioning information to your documentation. That's what we will do now. 
+[Add API documentation with versioning to your API](./AddSwaggerToWebApi.md)
